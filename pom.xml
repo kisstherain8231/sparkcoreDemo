@@ -8,34 +8,29 @@
   <artifactId>spark-core</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spark.version>2.4.4</spark.version>
-    <scala.version>2.11.8</scala.version>
-    <hadoop.version>2.7.1</hadoop.version>
+    <spark.version>2.2.0</spark.version>
+    <scala.version>2.11</scala.version>
+    <hadoop.version>2.7.0</hadoop.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
-      <version>${scala.version}</version>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_${scala.version}</artifactId>
+      <version>${spark.version}</version>
     </dependency>
-
-    <!--<dependency>-->
-      <!--<groupId>org.apache.spark</groupId>-->
-      <!--<artifactId>spark-core_2.11</artifactId>-->
-      <!--<version>2.2.0</version>-->
-    <!--</dependency>-->
-
-    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-core_2.12</artifactId>
-      <version>2.4.4</version>
+      <artifactId>spark-sql_${scala.version}</artifactId>
+      <version>${spark.version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-streaming_${scala.version}</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -51,7 +46,7 @@
         <!-- MAVEN 编译使用的JDK版本 -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7</version>
+        <version>3.8.1</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
@@ -60,6 +55,5 @@
       </plugin>
     </plugins>
   </build>
-
 
 </project>
